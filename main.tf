@@ -1,7 +1,7 @@
 data "aws_ip_ranges" "cloudfront" {
-#services = ["cloudfront"]
- regions  = ["eu-west-1", "eu-central-1"]
-  services = ["ec2"]
+services = ["cloudfront"]
+ #regions  = ["eu-west-1", "eu-central-1","us-east-1"]
+#  services = ["ec2"]
 }
 
 locals {
