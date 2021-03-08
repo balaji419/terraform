@@ -9,5 +9,5 @@ def load()
       println("destroying"); 
   }
     
-  
+  return proceed;
 }
