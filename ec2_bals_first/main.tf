@@ -8,4 +8,9 @@ terraform {
   }
 
  required_version  = ">0.12.0"
+    backend "s3" {
+    bucket = "terraformbacked"
+    key    = "multibranch/ec2_backend.tf"
+    region = "us-east-2"
+  }
 }
