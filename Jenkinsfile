@@ -1,10 +1,11 @@
-def buildordestroy
+//def buildordestroy
 def groovyobj
 pipeline {
   agent any
   environment{
   MSG= "we are build the terraform ec2 and vpc"    
   creds=credentials("print")
+  BUILDORDESTROY=""
   }
   parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
   stages {
