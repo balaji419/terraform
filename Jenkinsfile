@@ -23,10 +23,13 @@ pipeline {
       }
     }
   stage('terraform decide') {
+    steps
     script {
+      
      groovyobj= load "decide.groovy"
      buildordestroy=groovy.load()
     }
+  }
     }
       stage('terraform deploy') {
         when {
