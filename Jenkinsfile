@@ -2,6 +2,10 @@ pipeline {
   agent any
   environment{
   MSG= "we are build the terraform ec2 and vpc"
+  
+   parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
+
+    
   creds=credentials("print")
   }
   stages {
