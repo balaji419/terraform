@@ -1,6 +1,6 @@
 def load()
 {
-  if (params.action=true){
+  if (params.action==true){
    proceed=build
       println("we are building"); 
   }
@@ -9,5 +9,5 @@ def load()
       println("destroying"); 
   }
     
-  }
+  
 }
