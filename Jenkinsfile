@@ -28,13 +28,13 @@ pipeline {
     script {
       
      groovyobj= load "decide.groovy"
-     buildordestroy=groovy.load()
+     env.BUILDORDESTROY=groovy.load()
     }
   }
     }
       stage('terraform deploy') {
         when {
-          env.BUILDORDESTROY: 'build'
+          BUILDORDESTROY: 'build'
         }
       steps {
         sh 'cd ec2_bals_first;terraform apply'
