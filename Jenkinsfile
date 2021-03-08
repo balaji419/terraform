@@ -3,13 +3,10 @@ def groovyobj
 pipeline {
   agent any
   environment{
-  MSG= "we are build the terraform ec2 and vpc"
-  
-   parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
-
-    
+  MSG= "we are build the terraform ec2 and vpc"    
   creds=credentials("print")
   }
+  parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
   stages {
     stage('terraform init') {
       steps {
