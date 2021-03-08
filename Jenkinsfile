@@ -34,7 +34,7 @@ pipeline {
     }
       stage('terraform deploy') {
         when {
-          BUILDORDESTROY: 'build'
+          equals BUILDORDESTROY: 'build'
         }
       steps {
         sh 'cd ec2_bals_first;terraform apply'
