@@ -13,5 +13,10 @@ pipeline {
       }
     }
 
+      stage('terraform planning') {
+      steps {
+        sh 'cd ec2_bals_first;terraform apply'
+      }
+    }
   }
 }
