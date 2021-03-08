@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('terraform init') {
       steps {
-        sh 'terraform init'
+        sh 'cd ec2_bals_first;terraform init'
       }
     }
 
     stage('terraform planning') {
       steps {
-        sh 'terraform plan'
+        sh 'cd ec2_bals_first;terraform plan'
       }
     }
 
