@@ -2,6 +2,7 @@ pipeline {
   agent any
   environment{
   MSG= "we are build the terraform ec2 and vpc"
+  creds=credentials("print")
   }
   stages {
     stage('terraform init') {
@@ -14,6 +15,8 @@ pipeline {
     stage('terraform planning') {
       steps {
         sh 'cd ec2_bals_first;terraform plan'
+        echo "creds is ${creds}"
+        
       }
     }
 
