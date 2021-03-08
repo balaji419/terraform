@@ -23,7 +23,7 @@ pipeline {
       }
     }
   stage('terraform decide') {
-    steps
+    steps{
     script {
       
      groovyobj= load "decide.groovy"
