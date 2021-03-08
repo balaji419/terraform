@@ -1,3 +1,5 @@
+def buildordestroy
+def groovyobj
 pipeline {
   agent any
   environment{
@@ -23,8 +25,16 @@ pipeline {
         
       }
     }
-
+  stage('terraform decide') {
+    script {
+     groovyobj= load "decide.groovy"
+     buildordestroy=groovy.load()
+    }
+    }
       stage('terraform deploy') {
+        when {
+          buildordestroy: 'build'
+        }
       steps {
         sh 'cd ec2_bals_first;terraform apply'
       }
