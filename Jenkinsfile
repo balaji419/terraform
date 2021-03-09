@@ -28,7 +28,7 @@ pipeline {
     script {
       
      groovyobj= load "decide.groovy"
-     BUILDORDESTROY=groovyobj.testApp()
+     env.BUILDORDESTROY=groovyobj.testApp()
       echo "output is ${BUILDORDESTROY}"
     }
   }
