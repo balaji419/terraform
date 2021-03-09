@@ -33,7 +33,7 @@ pipeline {
       
      groovyobj= load "decide.groovy"
       MSG="welcome123"
-     env.BUILDORDESTROY=groovyobj.testApp()
+     MSG=groovyobj.testApp()
       echo "output is ${MSG}"
     }
   }
