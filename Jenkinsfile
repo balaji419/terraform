@@ -5,7 +5,7 @@ pipeline {
   environment{
   MSG= "we are build the terraform ec2 and vpc"    
   creds=credentials("print")
-  BUILDORDESTROY=""
+  
   }
   parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
   stages {
@@ -13,6 +13,9 @@ pipeline {
       steps {
         sh 'cd ec2_bals_first;terraform init'
         echo "Message is ${MSG}"
+      }
+      script{
+      env.BUILDORDESTROY=""
       }
     }
 
@@ -29,7 +32,7 @@ pipeline {
       
      groovyobj= load "decide.groovy"
      env.BUILDORDESTROY=groovyobj.testApp()
-      echo "output is ${BUILDORDESTROY}"
+      echo "output is ${env.BUILDORDESTROY}"
     }
   }
     }
