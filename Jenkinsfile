@@ -36,7 +36,7 @@ pipeline {
       stage('terraform deploy') {
        
       steps {
-        sh 'cd ec2_bals_first;terraform apply'
+        sh 'cd ec2_bals_first;#terraform apply'
       }
     }
   }
