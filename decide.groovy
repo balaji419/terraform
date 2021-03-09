@@ -1,4 +1,4 @@
-def load()
+def run()
 {
   if (params.action==true){
    proceed=build
