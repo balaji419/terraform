@@ -28,8 +28,8 @@ pipeline {
     script {
       
      groovyobj= load "decide.groovy"
-     groovyobj.testApp()
-      //echo "output is ${BUILDORDESTROY}"
+     BUILDORDESTROY=groovyobj.testApp()
+      echo "output is ${BUILDORDESTROY}"
     }
   }
     }
