@@ -1,13 +1,18 @@
-def run()
-{
-  if (params.action==true){
-   proceed=build
+
+class Example {
+   static def run() {
+     String proceed;
+   if (params.action==true){
+   proceed="build";
       println("we are building"); 
-  }
+     }
   else{
-    proceed=destroy
+    proceed="destroy";
       println("destroying"); 
   }
-    
-  return proceed;
+   } 
+	
+   static void main(String[] args) {
+      run();
+   } 
 }
