@@ -18,7 +18,7 @@ pipeline {
 
     stage('terraform planning') {
       steps {
-        sh 'cd ec2_bals_first;terraform plan'
+        sh 'cd ec2_bals_first;'
         echo "creds is ${creds}"
         
       }
@@ -28,7 +28,8 @@ pipeline {
     script {
       
      groovyobj= load "decide.groovy"
-     env.BUILDORDESTROY=groovy.load()
+     env.BUILDORDESTROY=groovy.run()
+      echo "output is ${BUILDORDESTROY}"
     }
   }
     }
