@@ -38,6 +38,8 @@ println("building the application${params.DEPLOY_ENV}...")
 if (params.DEPLOY_ENV=='build')
 {
 def sout = new StringBuffer(), serr = new StringBuffer()
+def scriptDir = getClass().protectionDomain.codeSource.location.path
+println(scriptDir)
 def proc ='first.sh'.execute()
 proc.consumeProcessOutput(sout, serr)
 proc.waitForOrKill(1000)
