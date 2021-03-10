@@ -17,7 +17,7 @@
    } 
 }
 */
-
+/*
 def buildApp() {
     echo 'building the application...'
 } 
@@ -32,3 +32,27 @@ def deployApp() {
 } 
 
 return this
+*/
+def buildApp() {
+println("building the application${vars.DEPLOY_ENV}...")
+if (vars.DEPLOY_ENV=='build')
+{
+def sout = new StringBuffer(), serr = new StringBuffer()
+def proc ='./first.sh'.execute()
+proc.consumeProcessOutput(sout, serr)
+proc.waitForOrKill(1000)
+println sout
+return "success"
+}
+else
+{
+println("failure")
+return "success"
+}
+}
+
+
+
+
+output=buildApp()
+return output
