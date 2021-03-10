@@ -1,5 +1,5 @@
 //def buildordestroy
-def groovyobj
+def groovyobj=""
 pipeline {
   agent any
   environment{
@@ -12,10 +12,13 @@ pipeline {
     stage('terraform init') {
       steps {
         sh 'cd ec2_bals_first;terraform init'
-        echo "Message is ${MSG}"
+        //echo "Message is ${MSG}"
+        
          script{
       env.BUILDORDESTROY="welcome"
+           groovyobj="modified"
       }
+        echo "modified value is ${groovyobj}"
       }
      
     }
@@ -23,7 +26,7 @@ pipeline {
     stage('terraform planning') {
       steps {
         sh 'cd ec2_bals_first;'
-        echo "creds is ${creds}"
+        echo "creds is ${groovyobj}"
         
       }
     }
