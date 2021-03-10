@@ -34,9 +34,9 @@ pipeline {
     steps{
     script {
       
-     groovyobj= load "decide.groovy"
+     groovyobj1= load "decide.groovy"
       MSG="welcome123"
-     MSG=groovyobj.buildApp()
+     MSG=groovyobj1.buildApp()
       
     }
       echo "value of message in steps is ${MSG}"
