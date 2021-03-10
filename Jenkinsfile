@@ -1,7 +1,7 @@
 //def buildordestroy
 def groovyobj=""
 pipeline {
-  agent any
+  agent "docker_ansible"
   environment{
   MSG= "we are build the terraform ec2 and vpc"    
   creds=credentials("print")
