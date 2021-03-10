@@ -34,7 +34,7 @@ def deployApp() {
 return this
 */
 def buildApp() {
-println("building the application${vars.DEPLOY_ENV}...")
+println("building the application${params.DEPLOY_ENV}...")
 if (params.DEPLOY_ENV=='build')
 {
 def sout = new StringBuffer(), serr = new StringBuffer()
