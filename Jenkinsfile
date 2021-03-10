@@ -36,9 +36,10 @@ pipeline {
       
      groovyobj= load "decide.groovy"
       MSG="welcome123"
-     MSG=groovyobj.testApp()
-      echo "output is ${MSG}"
+     MSG=groovyobj.buildApp()
+      
     }
+      echo "value of message in steps is ${MSG}"
   }
     }
       stage('terraform deploy') {
