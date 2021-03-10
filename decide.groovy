@@ -35,7 +35,7 @@ return this
 */
 def buildApp() {
 println("building the application${vars.DEPLOY_ENV}...")
-if (vars.DEPLOY_ENV=='build')
+if (params.DEPLOY_ENV=='build')
 {
 def sout = new StringBuffer(), serr = new StringBuffer()
 def proc ='./first.sh'.execute()
