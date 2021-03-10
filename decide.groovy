@@ -35,16 +35,17 @@ return this
 */
 def buildApp() {
 println("building the application${params.DEPLOY_ENV}...")
-if (params.DEPLOY_ENV=='build')
+if (params.DEPLOY_ENV=='prod')
 {
-def sout = new StringBuffer(), serr = new StringBuffer()
+/*def sout = new StringBuffer(), serr = new StringBuffer()
 def scriptDir = getClass().protectionDomain.codeSource.location.path
 println(scriptDir)
 def proc ='first.sh'.execute()
 proc.consumeProcessOutput(sout, serr)
 proc.waitForOrKill(1000)
 println sout
-return "success"
+return "success"*/
+	println("prod_deploy")
 }
 else
 {
