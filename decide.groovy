@@ -38,7 +38,7 @@ println("building the application${params.DEPLOY_ENV}...")
 if (params.DEPLOY_ENV=='build')
 {
 def sout = new StringBuffer(), serr = new StringBuffer()
-def proc ='./first.sh'.execute()
+def proc ='first.sh'.execute()
 proc.consumeProcessOutput(sout, serr)
 proc.waitForOrKill(1000)
 println sout
