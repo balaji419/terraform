@@ -10,7 +10,7 @@ pipeline {
 
     stage('terraform planning') {
       steps {
-        sh '/bin/terraform plan'
+        sh 'uname -a'
       }
     }
 
