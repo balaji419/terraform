@@ -1,4 +1,8 @@
-
+properties([
+    parameters([
+        string(name: 'terraformname', defaultValue: 'tfname', description: 'Ttf', ),
+		])
+		])
 pipeline {
   agent any
   stages {
