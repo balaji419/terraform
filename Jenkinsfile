@@ -1,6 +1,7 @@
 properties([
     parameters([
         string(name: 'terraformname', defaultValue: 'tfname', description: 'Ttf', ),
+	    string(name: 'second', defaultValue: 'tfname', description: 'Ttf', ),
 		])
 		])
 pipeline {
